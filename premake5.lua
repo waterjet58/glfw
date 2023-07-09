@@ -99,6 +99,7 @@ project "GLFW"
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
+		buildoptions "/MT"
 
 	filter "configurations:Release"
 		runtime "Release"
