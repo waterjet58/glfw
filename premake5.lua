@@ -1,7 +1,7 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -96,10 +96,14 @@ project "GLFW"
 			"_CRT_SECURE_NO_WARNINGS"
 		}
 
+		links
+		{
+			"Dwmapi.lib"
+		}
+
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
-		buildoptions "/MT"
 
 	filter "configurations:Release"
 		runtime "Release"
